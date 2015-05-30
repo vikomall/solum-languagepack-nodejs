@@ -1,5 +1,7 @@
 FROM buildpack-deps:jessie
 
+RUN groupadd -r nodeuser && useradd -r -g nodeuser nodeuser
+
 # verify gpg and sha256: http://nodejs.org/dist/v0.10.31/SHASUMS256.txt.asc
 # gpg: aka "Timothy J Fontaine (Work) <tj.fontaine@joyent.com>"
 # gpg: aka "Julien Gilli <jgilli@fastmail.fm>"
@@ -17,4 +19,6 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
 	&& npm install -g npm@"$NPM_VERSION" \
 	&& npm cache clear
 	
+RUN mkdir -p /usr/local && chown -R nodeuser:nodeuser /usr/local
+
 COPY bin /solum/bin
