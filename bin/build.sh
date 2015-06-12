@@ -2,4 +2,4 @@
 
 # build
 cd /app
-npm install
+su nodeuser -c -l "grunt"
