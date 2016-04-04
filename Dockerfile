@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie
+FROM ubuntu:precise
 
 RUN groupadd -r nodeuser && useradd -r -m -g nodeuser nodeuser
 
@@ -21,4 +21,11 @@ RUN curl -SLO "http://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x
 
 RUN mkdir -p /usr/local && chown -R nodeuser:nodeuser /usr/local
 
-COPY bin /solum/bin
+RUN apt-get -yqq update
+RUN apt-get -yqq install python-pip
+RUN apt-get -yqq install python-dev
+RUN apt-get -yqq install python-flask
+RUN apt-get -yqq install python-requests
+
+
+COPY build.sh /solum/bin/
