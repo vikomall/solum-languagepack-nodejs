@@ -6,7 +6,8 @@ RUN apt-get -yqq install python-dev
 RUN apt-get -yqq install python-flask
 RUN apt-get -yqq install python-requests
 RUN apt-get -yqq install curl
-RUN apt-get install bzip2
+RUN apt-get -yqq install bzip2
+RUN apt-get -yqq install git-all
 
 RUN groupadd -r nodeuser && useradd -r -m -g nodeuser nodeuser
 
