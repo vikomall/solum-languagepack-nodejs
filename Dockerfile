@@ -9,7 +9,7 @@ FROM ubuntu:precise
 #RUN apt-get -yqq install bzip2
 #RUN apt-get -yqq install git
 
-RUN apt-get -yqq install python-pip install python-dev python-flask python-requests curl bzip2 git
+RUN apt-get -yqq install python-pip python-dev python-flask python-requests curl bzip2 git
 
 RUN groupadd -r nodeuser && useradd -r -m -g nodeuser nodeuser
 
