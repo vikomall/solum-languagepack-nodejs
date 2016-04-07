@@ -1,13 +1,15 @@
 FROM ubuntu:precise
 
-RUN apt-get -yqq update
-RUN apt-get -yqq install python-pip
-RUN apt-get -yqq install python-dev
-RUN apt-get -yqq install python-flask
-RUN apt-get -yqq install python-requests
-RUN apt-get -yqq install curl
-RUN apt-get -yqq install bzip2
-RUN apt-get -yqq install git
+#RUN apt-get -yqq update
+#RUN apt-get -yqq install python-pip
+#RUN apt-get -yqq install python-dev
+#RUN apt-get -yqq install python-flask
+#RUN apt-get -yqq install python-requests
+#RUN apt-get -yqq install curl
+#RUN apt-get -yqq install bzip2
+#RUN apt-get -yqq install git
+
+RUN apt-get -yqq install python-pip install python-dev python-flask python-requests curl bzip2 git
 
 RUN groupadd -r nodeuser && useradd -r -m -g nodeuser nodeuser
 
