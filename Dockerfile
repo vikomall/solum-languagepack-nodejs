@@ -7,7 +7,7 @@ RUN apt-get -yqq install python-flask
 RUN apt-get -yqq install python-requests
 RUN apt-get -yqq install curl
 RUN apt-get -yqq install bzip2
-RUN apt-get -yqq install git-all
+RUN apt-get -yqq install git
 
 RUN groupadd -r nodeuser && useradd -r -m -g nodeuser nodeuser
 
