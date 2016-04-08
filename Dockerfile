@@ -1,6 +1,6 @@
 FROM ubuntu:precise
 
-RUN apt-get -yqq update
+#RUN apt-get -yqq update
 #RUN apt-get -yqq install python-pip
 #RUN apt-get -yqq install python-dev
 #RUN apt-get -yqq install python-flask
@@ -9,7 +9,12 @@ RUN apt-get -yqq update
 #RUN apt-get -yqq install bzip2
 #RUN apt-get -yqq install git
 
-RUN apt-get -yqq install python-pip python-dev python-flask python-requests curl bzip2 git
+RUN apt-get install -y python2.7 python2.7-dev
+WORKDIR /tmp
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python2.7 get-pip.py
+
+RUN apt-get -yqq install python-flask python-requests curl bzip2 git
 
 RUN groupadd -r nodeuser && useradd -r -m -g nodeuser nodeuser
 
