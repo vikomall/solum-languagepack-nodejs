@@ -9,7 +9,7 @@ RUN apt-get -yqq update
 #RUN apt-get -yqq install bzip2
 #RUN apt-get -yqq install git
 
-RUN apt-get -yqq install curl bzip2 git
+RUN apt-get -yqq install python-dev python-pip python-flask python-requests curl bzip2 git
 
 RUN groupadd -r nodeuser && useradd -r -m -g nodeuser nodeuser
 
